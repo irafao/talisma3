@@ -4,7 +4,8 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.18.2",
-    "venom-bot": "^4.0.0"
+    "venom-bot": "^5.0.0",  // Atualizando para a versão mais recente
+    "puppeteer": "^19.0.0"  // Adicionando puppeteer
   },
   "scripts": {
     "start": "node server.js"
