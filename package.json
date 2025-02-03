@@ -1,0 +1,11 @@
+{
+  "name": "whatsapp-bot",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "venom-bot": "^4.0.0"
+  },
+  "scripts": {
+    "start": "node server.js"
+  }
+}
