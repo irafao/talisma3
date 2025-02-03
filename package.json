@@ -4,6 +4,9 @@
   "main": "server.js",
   "dependencies": {
     "express": "^4.18.2",
-    "other-dependencies": "versions"
+    "venom-bot": "^4.0.0"
+  },
+  "scripts": {
+    "start": "node server.js"
   }
 }
