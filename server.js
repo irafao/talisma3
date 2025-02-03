@@ -1,4 +1,7 @@
 const venom = require('venom-bot');
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;  // A porta será configurada pelo Render
 
 venom.create().then(client => start(client));
 
@@ -9,3 +12,7 @@ function start(client) {
     }
   });
 }
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
