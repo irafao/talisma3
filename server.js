@@ -1,10 +1,9 @@
 const venom = require('venom-bot');
 const express = require('express');
 const app = express();
-const PORT = process.env.PORT || 3000;  // A porta será configurada pelo Render
+const PORT = process.env.PORT || 3000;
 
-// Inicia o venom-bot e faz o processamento de mensagens
-venom.create().then(client => start(client)).catch(err => console.log(err));
+venom.create().then(client => start(client));
 
 function start(client) {
   client.onMessage((message) => {
@@ -13,18 +12,14 @@ function start(client) {
     }
   });
 
-  // Ao iniciar, gera o QR Code para autenticação
+  // Adicionando um monitoramento do estado para gerar o QR Code
   client.onStateChange((state) => {
+    console.log('State change: ', state);
     if (state === 'QR_CODE') {
-      console.log('QR Code gerado: ', client.getQrCode());
+      console.log('QR Code gerado. Escaneie com o WhatsApp!');
     }
   });
 }
-
-// Configura o servidor Express
-app.get('/', (req, res) => {
-  res.send('Bot do WhatsApp está rodando!');
-});
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
